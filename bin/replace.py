@@ -17,6 +17,10 @@ def replace_latex_syntax(input_file, output_file=None):
         # Replace \( and \) with $
         content = re.sub(r'\\\( ', r'$', content)
         content = re.sub(r' \\\)', r'$', content)
+        
+        
+        content = re.sub(r'\\\(', r'$', content)
+        content = re.sub(r'\\\)', r'$', content)
 
         with open(output_file, 'w') as file:
             file.write(content)
